@@ -15,7 +15,7 @@ server = app.server
 
 # App layout
 app.layout = html.Div([
-    html.Div(children='My First App with Data, Graph, and Controls'),
+    html.Div(children='CODELCO', style={'color':'#EC5C23', 'font-size': '32px', 'font-weight': 'bold', 'text-align': 'center'}),
     html.Hr(),
     dcc.RadioItems(options=['pop', 'lifeExp', 'gdpPercap'], value='lifeExp', id='my-final-radio-item-example'),
     dash_table.DataTable(data=df.to_dict('records'), page_size=6),
