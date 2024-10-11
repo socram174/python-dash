@@ -16,7 +16,7 @@ app.title = "CODELCO | DGM - Contratos"
 server = app.server
 
 # App layout
-app.layout = html.Div(children=[html.Img(src='assets/LogoCodelco.svg')], style={'display':'flex','justify-content': 'center', 'align-items': 'center','height':'100vh'}),
+app.layout = html.Div(children=[html.Img(src='assets/LogoCodelco.svg'),html.Img(src='assets/xd.jpg')], style={'display':'flex','justify-content': 'center', 'align-items': 'center','height':'100vh'}),
     #html.Hr(),
     #dcc.RadioItems(options=['pop', 'lifeExp', 'gdpPercap'], value='lifeExp', id='my-final-radio-item-example'),
     #dash_table.DataTable(data=df.to_dict('records'), page_size=6),
