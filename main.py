@@ -10,17 +10,18 @@ df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapmi
 # Initialize the app
 app = Dash(__name__)
 
+app.title = "CODELCO | DGM - Contratos"
+
 # Expose the Flask server
 server = app.server
 
 # App layout
-app.layout = html.Div([
-    html.Div(children='CODELCO', style={'color':'#EC5C23', 'font-size': '32px', 'font-weight': 'bold', 'text-align': 'center'}),
-    html.Hr(),
-    dcc.RadioItems(options=['pop', 'lifeExp', 'gdpPercap'], value='lifeExp', id='my-final-radio-item-example'),
-    dash_table.DataTable(data=df.to_dict('records'), page_size=6),
-    dcc.Graph(figure={}, id='my-final-graph-example')
-])
+app.layout = html.Div(children=[html.Img(src='assets/LogoCodelco.svg')], style={'display':'flex','justify-content': 'center', 'align-items': 'center','height':'100vh'}),
+    #html.Hr(),
+    #dcc.RadioItems(options=['pop', 'lifeExp', 'gdpPercap'], value='lifeExp', id='my-final-radio-item-example'),
+    #dash_table.DataTable(data=df.to_dict('records'), page_size=6),
+    #dcc.Graph(figure={}, id='my-final-graph-example')
+
 
 # Add controls to build the interaction
 @callback(
@@ -34,4 +35,6 @@ def update_graph(col_chosen):
 # Run the app
 if __name__ == '__main__':
     # Use Waitress for production
+    print("App running on: http://localhost:10000")
     serve(server, host='0.0.0.0', port=10000)
+
