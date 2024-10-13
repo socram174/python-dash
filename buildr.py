@@ -3,6 +3,8 @@ import sys
 
 def build_react_app():
     try:
+        # Install dependencies
+        subprocess.check_call(['npm', 'install'], cwd='./new-client',shell=True)
         # Build the React app
         subprocess.check_call(['npm', 'run', 'build'], cwd='./new-client',shell=True)
         print("React app built successfully.")
